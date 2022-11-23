@@ -1,0 +1,18 @@
+* Instructions
+
+** Basic Player Instructions
+Enter ~rock~, ~paper~ or ~scissors~, depending on the play you want to
+make. Substrings of these words are acceptable as respective
+replacements; for example, you can simply enter ~ro~, or even ~r~, for
+rock.
+
+** Quitting the Game
+Entering one of ~quit~, ~q~, or ~exit~ as a game input at any point
+will exit the game, and display a farewell message, as well as either
+not entering anything and hitting OK, or else simply cancelling the
+user prompt.
+
+** Winners
+At the end of the five rounds, the scores are displayed, and a winner
+is declared in the obvious manner (higher number of points wins, or
+else a tie is declared).
