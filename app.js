@@ -49,6 +49,9 @@ const gameSelectionButtons = [...document.querySelectorAll(".game-selection")];
 const messageArea = document.querySelector("#message");
 const computerScoreArea = document.querySelector("#computer > .score");
 const playerScoreArea = document.querySelector("#player > .score");
+const computerPlayName = document.querySelector("#computer .play");
+const playerPlayName = document.querySelector("#player .play");
+
 let computerScore = 0;
 let playerScore = 0;
 
@@ -68,6 +71,8 @@ gameSelectionButtons.forEach(button => {
 
 	// Update the UI
 	messageArea.textContent = message;
+	computerPlayName.textContent = gameKey[computerChoice].toUpperCase();
+	playerPlayName.textContent = playName.toUpperCase();
 	computerScoreArea.textContent = computerScore;
 	playerScoreArea.textContent = playerScore;
     });
