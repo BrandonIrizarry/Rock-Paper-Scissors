@@ -26,6 +26,11 @@ function playerWins (computerChoice, playerChoice) {
 // Don't interpret top-level user-input yet.
 function playRound (playerChoice) {
     const computerChoice = Math.floor(Math.random() * 3);
+
+    if (computerChoice === playerChoice) {
+	return "Round resulted in a tie";
+    }
+
     const playerWon = playerWins(computerChoice, playerChoice);
 
     const cname = gameKey[computerChoice];
