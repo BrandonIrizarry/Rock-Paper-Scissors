@@ -1,6 +1,15 @@
+html {
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
 #scoreboard {
     background-color: blue;
-    width: 200px;
+    width: 300px;
     height: 200px;
     display: flex;
     flex-direction: column;
@@ -10,12 +19,14 @@
 }
 
 #computer {
+    padding: 10px;
     background-color: red;
     width: 75%;
     height: 50px;
 }
 
 #player {
+    padding: 10px;
     background-color: green;
     width: 75%;
     height: 50px;
