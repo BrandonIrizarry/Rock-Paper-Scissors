@@ -76,5 +76,12 @@ gameSelectionButtons.forEach(button => {
 	playerPlayName.textContent = playName.toUpperCase();
 	computerScoreArea.textContent = computerScore;
 	playerScoreArea.textContent = playerScore;
+
+	// If one of the scores has reached 5, announce a winner
+	if (playerScore === 5) {
+	    console.log("player won");
+	} else if (computerScore === 5) {
+	    console.log("computer won");
+	}
     });
 });
