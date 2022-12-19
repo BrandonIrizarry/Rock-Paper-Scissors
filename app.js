@@ -47,8 +47,12 @@ function playRound (playerChoice) {
 // UI
 
 const gameSelectionButtons = [...document.querySelectorAll(".game-selection")];
-let playerScore = 0;
+
+const messageArea = document.querySelector("#message");
+const computerScoreArea = document.querySelector("#computer > .score");
+const playerScoreArea = document.querySelector("#player > .score");
 let computerScore = 0;
+let playerScore = 0;
 
 gameSelectionButtons.forEach(button => {
     button.addEventListener("click", e => {
@@ -56,13 +60,14 @@ gameSelectionButtons.forEach(button => {
 
 	const message = playRound(playerKey[playName]);
 
-	alert(message);
-
 	// If round is a tie, don't increment any scores
 	if (message.match("win")) {
 	    playerScore++;
 	} else if (message.match("lose")) {
 	    computerScore++;
 	}
+
+	// Update the UI
+	messageArea.textContent = message;
     });
 });
