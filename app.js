@@ -58,13 +58,11 @@ gameSelectionButtons.forEach(button => {
 
 	alert(message);
 
-	// Simple way to determine winner of round
+	// If round is a tie, don't increment any scores
 	if (message.match("win")) {
 	    playerScore++;
 	} else if (message.match("lose")) {
 	    computerScore++;
 	}
-
-	// else, round was a tie: don't increment any scores.
     });
 });
