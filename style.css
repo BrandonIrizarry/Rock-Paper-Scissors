@@ -1,0 +1,22 @@
+#scoreboard {
+    background-color: blue;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+#computer {
+    background-color: red;
+    width: 75%;
+    height: 50px;
+}
+
+#player {
+    background-color: green;
+    width: 75%;
+    height: 50px;
+}
