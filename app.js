@@ -16,8 +16,10 @@ const playerKey = { rock: 0, paper: 1, scissors: 2 };
 
 // Return 'true' if the player wins.
 function playerWins (computerChoice, playerChoice) {
-    return computerChoice - playerChoice === 2 // computer: scissors; player: rock
-	|| computerChoice < playerChoice; // any other play
+    const condition = !(playerChoice - computerChoice === 2) &&
+	  (computerChoice - playerChoice === 2 || computerChoice < playerChoice);
+
+    return condition;
 }
 
 // Return a string indicating the winner.
