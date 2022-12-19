@@ -44,38 +44,17 @@ function playRound (playerChoice) {
     return `You lose: ${cname} beats ${pname}`;
 }
 
-function getInput (roundNumber) {
-    while (true) {
-	const playerInput = prompt(`Your move for round ${roundNumber}`);
+// UI
 
-	if (!playerInput) {
-	    return false; // forward to the caller
-	}
+const gameSelectionButtons = [...document.querySelectorAll(".game-selection")];
+let playerScore = 0;
+let computerScore = 0;
 
-	if (gameKey.includes(playerInput.toLowerCase())) {
-	    return playerInput;
-	}
+gameSelectionButtons.forEach(button => {
+    button.addEventListener("click", e => {
+	const playName = e.target.dataset.name;
 
-	alert("Invalid choice: try again");
-    }
-}
-
-function game () {
-    let playerScore = 0;
-    let computerScore = 0;
-
-    for (let i = 0; i < 5; i++) {
-	const playerInput = getInput(i + 1);
-
-	if (!playerInput) {
-	    alert("Bye!");
-	    return; // Don't worry about displaying score information if user quits.
-	}
-
-	const playerInteger = playerKey[playerInput];
-
-	// Main event: play the round
-	const message = playRound(playerInteger);
+	const message = playRound(playerKey[playName]);
 
 	alert(message);
 
@@ -87,8 +66,5 @@ function game () {
 	}
 
 	// else, round was a tie: don't increment any scores.
-
-    }
-
-    alert(`player: ${playerScore}; computer: ${computerScore}`);
-}
+    });
+});
