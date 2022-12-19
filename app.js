@@ -55,33 +55,33 @@ const playerPlayName = document.querySelector("#player .play");
 let computerScore = 0;
 let playerScore = 0;
 
-gameSelectionButtons.forEach(button => {
-    button.addEventListener("click", e => {
-	const playName = e.target.dataset.name;
-	const computerChoice = Math.floor(Math.random() * 3);
+gameSelectionButtons.forEach(button => button.addEventListener("click", game));
 
-	const message = playRound(computerChoice, playerKey[playName]);
+function game (e) {
+    const playName = e.target.dataset.name;
+    const computerChoice = Math.floor(Math.random() * 3);
 
-	// Increment scores accordingly
-	// If round is a tie, don't increment any scores
-	if (message.match("win")) {
-	    playerScore++;
-	} else if (message.match("lose")) {
-	    computerScore++;
-	}
+    const message = playRound(computerChoice, playerKey[playName]);
 
-	// Update the UI
-	messageArea.textContent = message;
-	computerPlayName.textContent = gameKey[computerChoice].toUpperCase();
-	playerPlayName.textContent = playName.toUpperCase();
-	computerScoreArea.textContent = computerScore;
-	playerScoreArea.textContent = playerScore;
+    // Increment scores accordingly
+    // If round is a tie, don't increment any scores
+    if (message.match("win")) {
+	playerScore++;
+    } else if (message.match("lose")) {
+	computerScore++;
+    }
 
-	// If one of the scores has reached 5, announce a winner
-	if (playerScore === 5) {
-	    console.log("player won");
-	} else if (computerScore === 5) {
-	    console.log("computer won");
-	}
-    });
-});
+    // Update the UI
+    messageArea.textContent = message;
+    computerPlayName.textContent = gameKey[computerChoice].toUpperCase();
+    playerPlayName.textContent = playName.toUpperCase();
+    computerScoreArea.textContent = computerScore;
+    playerScoreArea.textContent = playerScore;
+
+    // If one of the scores has reached 5, announce a winner
+    if (playerScore === 5) {
+	console.log("player won");
+    } else if (computerScore === 5) {
+	console.log("computer won");
+    }
+}
