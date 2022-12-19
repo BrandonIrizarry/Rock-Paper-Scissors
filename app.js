@@ -54,6 +54,7 @@ const playerPlayName = document.querySelector("#player .play");
 
 let computerScore = 0;
 let playerScore = 0;
+const MAX_SCORE = 5;
 
 gameSelectionButtons.forEach(button => button.addEventListener("click", game));
 
@@ -79,9 +80,17 @@ function game (e) {
     playerScoreArea.textContent = playerScore;
 
     // If one of the scores has reached 5, announce a winner
-    if (playerScore === 5) {
-	console.log("player won");
-    } else if (computerScore === 5) {
-	console.log("computer won");
+    maybeCleanup(computerScore, playerScore);
+}
+
+function maybeCleanup (computerScore, playerScore) {
+    if (computerScore < MAX_SCORE && playerScore < MAX_SCORE) return;
+
+    if (computerScore === 5) {
+	messageArea.textContent = "Computer won, sorry.";
+    } else if (playerScore === 5) {
+	messageArea.textContent = "You win, congratulations!";
     }
+
+    gameSelectionButtons.forEach(button => button.removeEventListener("click", game));
 }
