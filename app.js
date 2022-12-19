@@ -69,5 +69,7 @@ gameSelectionButtons.forEach(button => {
 
 	// Update the UI
 	messageArea.textContent = message;
+	computerScoreArea.textContent = computerScore;
+	playerScoreArea.textContent = playerScore;
     });
 });
