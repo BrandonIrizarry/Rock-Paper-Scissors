@@ -23,11 +23,9 @@ function playerWins (computerChoice, playerChoice) {
     return condition;
 }
 
-// 'playerChoice' is an integer (0,1,2) correspoding to a player choice.
+// 'computerChoice' and 'playerChoice' are integers (0,1,2) correspoding to a player choice.
 // Return a string indicating the winner.
-function playRound (playerChoice) {
-    const computerChoice = Math.floor(Math.random() * 3);
-
+function playRound (computerChoice, playerChoice) {
     if (computerChoice === playerChoice) {
 	return "Round resulted in a tie";
     }
@@ -57,8 +55,9 @@ let playerScore = 0;
 gameSelectionButtons.forEach(button => {
     button.addEventListener("click", e => {
 	const playName = e.target.dataset.name;
+	const computerChoice = Math.floor(Math.random() * 3);
 
-	const message = playRound(playerKey[playName]);
+	const message = playRound(computerChoice, playerKey[playName]);
 
 	// If round is a tie, don't increment any scores
 	if (message.match("win")) {
