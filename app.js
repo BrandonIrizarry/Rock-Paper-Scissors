@@ -62,6 +62,7 @@ gameSelectionButtons.forEach(button => {
 
 	const message = playRound(computerChoice, playerKey[playName]);
 
+	// Increment scores accordingly
 	// If round is a tie, don't increment any scores
 	if (message.match("win")) {
 	    playerScore++;
