@@ -6,11 +6,12 @@ paper = 1
 scissors = 2
 
 Numbers are compared in the usual way: a greater number beats a
-smaller number. But there is one twist. If the difference between the
-two numbers is 2, the smaller of the two numbers wins.
+smaller number, and equal numbers result in a tie. But there is one
+twist. If the difference between the two numbers is 2, the smaller of
+the two numbers wins.
 */
 
-// Game key
+// Game keys
 const gameKey = ["rock", "paper", "scissors"];
 const playerKey = { rock: 0, paper: 1, scissors: 2 };
 
@@ -22,8 +23,8 @@ function playerWins (computerChoice, playerChoice) {
     return condition;
 }
 
+// 'playerChoice' is an integer (0,1,2) correspoding to a player choice.
 // Return a string indicating the winner.
-// Don't interpret top-level user-input yet.
 function playRound (playerChoice) {
     const computerChoice = Math.floor(Math.random() * 3);
 
@@ -78,7 +79,7 @@ function game () {
 
 	alert(message);
 
-	// Dirty technique to determine winner of round. :(
+	// Simple way to determine winner of round
 	if (message.match("win")) {
 	    playerScore++;
 	} else if (message.match("lose")) {
