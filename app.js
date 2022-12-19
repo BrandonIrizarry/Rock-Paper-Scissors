@@ -48,7 +48,7 @@ function getInput (roundNumber) {
 	const playerInput = prompt(`Your move for round ${roundNumber}`);
 
 	if (!playerInput) {
-	    alert("bye!");
+	    return false; // forward to the caller
 	}
 
 	if (gameKey.includes(playerInput.toLowerCase())) {
@@ -65,10 +65,29 @@ function game () {
 
     for (let i = 0; i < 5; i++) {
 	const playerInput = getInput(i + 1);
+
+	if (!playerInput) {
+	    alert("Bye!");
+	    return; // Don't worry about displaying score information if user quits.
+	}
+
 	const playerInteger = playerKey[playerInput];
 
-	console.assert(typeof playerInteger === "number" && 0 <= playerInteger && playerInteger <= 2);
+	// Main event: play the round
+	const message = playRound(playerInteger);
 
-	alert(playRound(playerInteger));
+	alert(message);
+
+	// Dirty technique to determine winner of round. :(
+	if (message.match("win")) {
+	    playerScore++;
+	} else if (message.match("lose")) {
+	    computerScore++;
+	}
+
+	// else, round was a tie: don't increment any scores.
+
     }
+
+    alert(`player: ${playerScore}; computer: ${computerScore}`);
 }
