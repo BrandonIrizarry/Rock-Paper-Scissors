@@ -60,3 +60,7 @@ article > * {
     flex: auto;
     height: 25vh;
 }
+
+.game-selection:focus {
+    background-color: #aaa;
+}
