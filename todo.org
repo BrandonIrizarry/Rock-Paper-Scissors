@@ -1,0 +1,19 @@
+* Improve design with an eye towards mobile use [1/5]
+
+This is still a rough draft. Ideas:
+
+1. [X] Include suggestive images or icons (SVG, Unicode) for "rock",
+"paper", and "scissors".
+
+2. [ ] Change '#player' and '#computer' background colors depending on who won
+the round (the current approach assigns fixed background colors to
+these players.)
+
+3. [ ] When the game is over, dynamically introduce a button into the DOM
+that offers to restart the game.
+
+4. [ ] Generally improve the UI look of the information layout in the
+'#computer' and '#player' divs.
+
+5. [ ] Make the title at least a little more prominent, if not somewhat
+nicer.
