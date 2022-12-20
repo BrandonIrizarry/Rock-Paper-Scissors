@@ -7,21 +7,24 @@
 	<link href="style.css" rel="stylesheet">
     </head>
     <body>
-	<button class="game-selection" data-name="rock">Rock</button>
-	<button class="game-selection" data-name="paper">Paper</button>
-	<button class="game-selection" data-name="scissors">Scissors</button>
+	<div id="message">Hi! Welcome to Rock Paper Scissors.</div>
 
-
-	<div id="scoreboard">
-	    <div id="message">Hi! Welcome to Rock Paper Scissors.</div>
-	    <div id="computer">
+	<article>
+	    <div class="side" id="computer">
 		Computer: <span class="score">0</span>
 		<div class="play"></div>
 	    </div>
-	    <div id="player">
+
+	    <div class="side" id="player">
 		Player: <span class="score">0</span>
-		<div class="play"</div>
+		<div class="play"></div>
 	    </div>
+	</article>
+
+	<div class="button-dock">
+	    <button class="game-selection" data-name="rock">Rock</button>
+	    <button class="game-selection" data-name="paper">Paper</button>
+	    <button class="game-selection" data-name="scissors">Scissors</button>
 	</div>
     </body>
 </html>
