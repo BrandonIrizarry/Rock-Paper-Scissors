@@ -8,6 +8,11 @@ html {
     box-sizing: inherit;
 }
 
+img {
+    width: 75%;
+    height: 75%;
+}
+
 body {
     margin: 0;
     display: flex;
