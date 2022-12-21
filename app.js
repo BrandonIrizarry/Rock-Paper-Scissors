@@ -59,7 +59,10 @@ const MAX_SCORE = 5;
 gameSelectionButtons.forEach(button => button.addEventListener("click", game));
 
 function game (e) {
-    const playName = e.target.dataset.name;
+    // Clicking on either the button or the embedded image should
+    // trigger the event. Use 'this' (instead of 'e.target') to enable
+    // propagation upwards towards the button element.
+    const playName = this.dataset.name;
     const computerChoice = Math.floor(Math.random() * 3);
 
     const message = playRound(computerChoice, playerKey[playName]);

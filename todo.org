@@ -1,11 +1,11 @@
-* Improve design with an eye towards mobile use [1/5]
+* Improve design with an eye towards mobile use [2/6]
 
 This is still a rough draft. Ideas:
 
 1. [X] Include suggestive images or icons (SVG, Unicode) for "rock",
    "paper", and "scissors".
 
-2. [ ] Fix button-click bug: clicking on either the image or the
+2. [X] Fix button-click bug: clicking on either the image or the
    button should trigger the event.
 
 3. [ ] Change '#player' and '#computer' background colors depending on
