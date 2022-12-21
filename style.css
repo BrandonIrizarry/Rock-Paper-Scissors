@@ -9,6 +9,11 @@ html {
 }
 
 img {
+    width: 200px;
+    height: 200px;
+}
+
+img.fitted {
     width: 75%;
     height: 75%;
 }
@@ -28,7 +33,9 @@ body {
 .side {
     padding: 10px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .banner {
@@ -52,8 +59,8 @@ article > * {
     background-color: green;
 }
 
-.play {
-
+.score {
+    font-size: 2em;
 }
 
 .button-dock {
