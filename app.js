@@ -20,7 +20,7 @@ const sources = [
 // Game keys
 const gameKey = ["rock", "paper", "scissors"];
 const playerKey = { rock: 0, paper: 1, scissors: 2 };
-const playerImages = gameKey.map((name, i) => {
+const playerImages = gameKey.map((_, i) => {
     const img = document.createElement("img");
     img.src = sources[i];
     return img;
@@ -69,7 +69,7 @@ const MAX_SCORE = 5;
 
 gameSelectionButtons.forEach(button => button.addEventListener("click", game));
 
-function game (e) {
+function game () {
     // Clicking on either the button or the embedded image should
     // trigger the event. Use 'this' (instead of 'e.target') to enable
     // propagation upwards towards the button element.
