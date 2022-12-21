@@ -1,4 +1,4 @@
-* Improve design with an eye towards mobile use [3/6]
+* Improve design with an eye towards mobile use [3/7]
 
 This is still a rough draft. Ideas:
 
@@ -23,3 +23,24 @@ This is still a rough draft. Ideas:
 
 6. [ ] Make the title at least a little more prominent, if not
    somewhat nicer.
+
+7. [ ] Make the computer player a bit "smarter.
+   - Generally, we want to penalize a player for attempting to play
+     the game by pressing a single button all the way through. After
+     all, given that the computer's choice is evenly distributed among
+     the three possible plays, it's a reasonable and convenient thing
+     to do.
+   - To thwart this strategy, we should count the number of times a
+     player uses each play. From there, the computer's next plays will
+     be weighted towards using ones that defeat the human player's
+     most used plays. This information could even persist across
+     restarts.
+   - In the end, a human player's best bet is to always "switch it
+     up". Maybe this can be thwarted too, by checking if three
+     distinct plays have been made: in such a case, the computer will
+     weigh more towards using (or else outright use) the play that
+     thwarts the first one in the streak they used. For example, if
+     the player tries "rock" then "paper" then "scissors", the
+     computer will next go for "paper", assuming the player is merely
+     trying to rotate back to "rock" and proceed in the same way from
+     there.
