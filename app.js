@@ -63,9 +63,12 @@ function game (e) {
     // trigger the event. Use 'this' (instead of 'e.target') to enable
     // propagation upwards towards the button element.
     const playName = this.dataset.name;
-    const computerChoice = Math.floor(Math.random() * 3);
+    const playerChoice = playerKey[playName];
 
-    const message = playRound(computerChoice, playerKey[playName]);
+    const computerChoice = Math.floor(Math.random() * 3);
+    const computerPlayName = gameKey[computerChoice];
+
+    const message = playRound(computerChoice, playerChoice);
 
     // Increment scores accordingly
     // If round is a tie, don't increment any scores
@@ -77,7 +80,7 @@ function game (e) {
 
     // Update the UI
     messageArea.textContent = message;
-    computerPlayName.textContent = gameKey[computerChoice].toUpperCase();
+    computerPlayName.textContent = computerPlayName.toUpperCase();
     playerPlayName.textContent = playName.toUpperCase();
     computerScoreArea.textContent = computerScore;
     playerScoreArea.textContent = playerScore;
