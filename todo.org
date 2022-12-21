@@ -1,4 +1,4 @@
-* Improve design with an eye towards mobile use [2/6]
+* Improve design with an eye towards mobile use [3/6]
 
 This is still a rough draft. Ideas:
 
@@ -15,8 +15,11 @@ This is still a rough draft. Ideas:
 4. [ ] When the game is over, dynamically introduce a button into the
    DOM that offers to restart the game.
 
-5. [ ] Generally improve the UI look of the information layout in the
+5. [X] Generally improve the UI look of the information layout in the
    '#computer' and '#player' divs.
+   - Essentially, we've resolved the spirit of this TODO item by
+     signifying the current round's play with an image, as opposed to
+     the simple word denoting the play.
 
 6. [ ] Make the title at least a little more prominent, if not
    somewhat nicer.

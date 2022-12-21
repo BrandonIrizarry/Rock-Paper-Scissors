@@ -77,8 +77,6 @@ function game () {
     const playerChoice = playerKey[playName];
 
     const computerChoice = Math.floor(Math.random() * 3);
-    const computerPlayName = gameKey[computerChoice];
-
     const message = playRound(computerChoice, playerChoice);
 
     // Increment scores accordingly
@@ -91,8 +89,14 @@ function game () {
 
     // Update the UI
     messageArea.textContent = message;
-    computerPlayInfo.textContent = computerPlayName.toUpperCase();
-    playerPlayInfo.textContent = playName.toUpperCase();
+    let currentImage = computerPlayInfo.querySelector("img");
+    if (currentImage) currentImage.remove();
+    computerPlayInfo.appendChild(playerImages[computerChoice].cloneNode());
+
+    currentImage = playerPlayInfo.querySelector("img");
+    if (currentImage) currentImage.remove();
+    playerPlayInfo.appendChild(playerImages[playerChoice].cloneNode());
+
     computerScoreArea.textContent = computerScore;
     playerScoreArea.textContent = playerScore;
 
