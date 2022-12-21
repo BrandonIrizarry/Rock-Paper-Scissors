@@ -11,9 +11,20 @@ twist. If the difference between the two numbers is 2, the smaller of
 the two numbers wins.
 */
 
+const sources = [
+    "assets/alpine-landscape-rock-rubble-01a-al1.svg",
+    "assets/Legal-Paper.svg",
+    "assets/edit-cut.svg"
+];
+
 // Game keys
 const gameKey = ["rock", "paper", "scissors"];
 const playerKey = { rock: 0, paper: 1, scissors: 2 };
+const playerImages = gameKey.map((name, i) => {
+    const img = document.createElement("img");
+    img.src = sources[i];
+    return img;
+});
 
 // Return 'true' if the player wins.
 function playerWins (computerChoice, playerChoice) {
