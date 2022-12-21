@@ -69,6 +69,15 @@ const MAX_SCORE = 5;
 
 gameSelectionButtons.forEach(button => button.addEventListener("click", game));
 
+// 'playInfo' is the DOM Node where player info is supposed to
+// appear. This info should be graphical in natural, in the form of an
+// image associated with the given side's current play.
+function updatePlayInfo (playInfo, choice) {
+    let currentImage = playInfo.querySelector("img");
+    if (currentImage) currentImage.remove();
+    playInfo.appendChild(playerImages[choice].cloneNode());
+}
+
 function game () {
     // Clicking on either the button or the embedded image should
     // trigger the event. Use 'this' (instead of 'e.target') to enable
@@ -89,13 +98,9 @@ function game () {
 
     // Update the UI
     messageArea.textContent = message;
-    let currentImage = computerPlayInfo.querySelector("img");
-    if (currentImage) currentImage.remove();
-    computerPlayInfo.appendChild(playerImages[computerChoice].cloneNode());
 
-    currentImage = playerPlayInfo.querySelector("img");
-    if (currentImage) currentImage.remove();
-    playerPlayInfo.appendChild(playerImages[playerChoice].cloneNode());
+    updatePlayInfo(computerPlayInfo, computerChoice);
+    updatePlayInfo(playerPlayInfo, playerChoice);
 
     computerScoreArea.textContent = computerScore;
     playerScoreArea.textContent = playerScore;
