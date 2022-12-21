@@ -27,6 +27,12 @@ body {
 
 .side {
     padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.banner {
+    margin-bottom: auto;
 }
 
 article {
@@ -47,7 +53,7 @@ article > * {
 }
 
 .play {
-    height: 100px;
+
 }
 
 .button-dock {

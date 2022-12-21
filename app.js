@@ -58,8 +58,8 @@ function playRound (computerChoice, playerChoice) {
 const gameSelectionButtons = [...document.querySelectorAll(".game-selection")];
 
 const messageArea = document.querySelector("#message");
-const computerScoreArea = document.querySelector("#computer > .score");
-const playerScoreArea = document.querySelector("#player > .score");
+const computerScoreArea = document.querySelector("#computer .score");
+const playerScoreArea = document.querySelector("#player .score");
 const computerPlayInfo = document.querySelector("#computer .play");
 const playerPlayInfo = document.querySelector("#player .play");
 
@@ -76,6 +76,20 @@ function updatePlayInfo (playInfo, choice) {
     let currentImage = playInfo.querySelector("img");
     if (currentImage) currentImage.remove();
     playInfo.appendChild(playerImages[choice].cloneNode());
+}
+
+function useFancyNumber (n) {
+    const base = 0x2460; // ①
+
+    const fancy = Array.from({length: 20}, (_, i) => i)
+	  .map(index => {
+	      return String.fromCodePoint(base + index);
+	  });
+
+    // Add zero as a special case
+    fancy.unshift("⓪");
+
+    return fancy[n];
 }
 
 function game () {
@@ -102,8 +116,8 @@ function game () {
     updatePlayInfo(computerPlayInfo, computerChoice);
     updatePlayInfo(playerPlayInfo, playerChoice);
 
-    computerScoreArea.textContent = computerScore;
-    playerScoreArea.textContent = playerScore;
+    computerScoreArea.textContent = useFancyNumber(computerScore);
+    playerScoreArea.textContent = useFancyNumber(playerScore);
 
     // If one of the scores has reached 5, announce a winner
     maybeCleanup(computerScore, playerScore);
