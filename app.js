@@ -112,3 +112,7 @@ function game () {
 	buttonDock.remove();
     }
 }
+
+function reset () {
+    document.body.appendChild(buttonDock);
+}
