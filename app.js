@@ -11,7 +11,7 @@ twist. If the difference between the two numbers is 2, the smaller of
 the two numbers wins.
 */
 
-const sources = [
+const imageSources = [
     "assets/alpine-landscape-rock-rubble-01a-al1.svg",
     "assets/Legal-Paper.svg",
     "assets/edit-cut.svg"
@@ -20,11 +20,6 @@ const sources = [
 // Game keys
 const gameKey = ["rock", "paper", "scissors"];
 const playerKey = { rock: 0, paper: 1, scissors: 2 };
-const playerImages = gameKey.map((_, i) => {
-    const img = document.createElement("img");
-    img.src = sources[i];
-    return img;
-});
 
 // Return 'true' if the player wins.
 function playerWins (computerChoice, playerChoice) {
@@ -74,8 +69,10 @@ gameSelectionButtons.forEach(button => button.addEventListener("click", game));
 // image associated with the given side's current play.
 function updatePlayInfo (playInfo, choice) {
     let currentImage = playInfo.querySelector("img");
-    if (currentImage) currentImage.remove();
-    playInfo.appendChild(playerImages[choice].cloneNode());
+
+    if (currentImage) {
+	currentImage.src = imageSources[choice];
+    }
 }
 
 // Create 'useFancyNumber' using a factory, to avoid creating and
