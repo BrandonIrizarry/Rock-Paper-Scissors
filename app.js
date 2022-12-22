@@ -51,6 +51,7 @@ function playRound (computerChoice, playerChoice) {
 // UI
 
 const gameSelectionButtons = [...document.querySelectorAll(".game-selection")];
+const buttonDock = document.querySelector(".button-dock");
 
 const messageArea = document.querySelector("#message");
 const computerScoreArea = document.querySelector("#computer .score");
@@ -107,18 +108,7 @@ function game () {
     computerScoreArea.textContent = useFancyNumber(computerScore);
     playerScoreArea.textContent = useFancyNumber(playerScore);
 
-    // If one of the scores has reached 5, announce a winner
-    maybeCleanup(computerScore, playerScore);
-}
-
-function maybeCleanup (computerScore, playerScore) {
-    if (computerScore < MAX_SCORE && playerScore < MAX_SCORE) return;
-
-    if (computerScore === 5) {
-	messageArea.textContent = "Computer won, sorry.";
-    } else if (playerScore === 5) {
-	messageArea.textContent = "You win, congratulations!";
+    if (computerScore === MAX_SCORE || playerScore === MAX_SCORE) {
+	buttonDock.remove();
     }
-
-    gameSelectionButtons.forEach(button => button.removeEventListener("click", game));
 }
