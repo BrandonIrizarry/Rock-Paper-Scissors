@@ -78,7 +78,9 @@ function updatePlayInfo (playInfo, choice) {
     playInfo.appendChild(playerImages[choice].cloneNode());
 }
 
-function useFancyNumber (n) {
+// Create 'useFancyNumber' using a factory, to avoid creating and
+// defining 'fancy' with each invocation.
+const useFancyNumber = (() => {
     const base = 0x2460; // ①
 
     const fancy = Array.from({length: 20}, (_, i) => i)
@@ -89,8 +91,8 @@ function useFancyNumber (n) {
     // Add zero as a special case
     fancy.unshift("⓪");
 
-    return fancy[n];
-}
+    return n => fancy[n];
+})();
 
 function game () {
     // Clicking on either the button or the embedded image should
