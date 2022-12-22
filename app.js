@@ -115,4 +115,9 @@ function game () {
 
 function reset () {
     document.body.appendChild(buttonDock);
+    playerScore = 0;
+    computerScore = 0;
+
+    computerScoreArea.textContent = "⓪";
+    playerScoreArea.textContent = "⓪";
 }
