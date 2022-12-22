@@ -64,17 +64,6 @@ const MAX_SCORE = 5;
 
 gameSelectionButtons.forEach(button => button.addEventListener("click", game));
 
-// 'playInfo' is the DOM Node where player info is supposed to
-// appear. This info should be graphical in natural, in the form of an
-// image associated with the given side's current play.
-function updatePlayInfo (playInfo, choice) {
-    let currentImage = playInfo.querySelector("img");
-
-    if (currentImage) {
-	currentImage.src = imageSources[choice];
-    }
-}
-
 // Create 'useFancyNumber' using a factory, to avoid creating and
 // defining 'fancy' with each invocation.
 const useFancyNumber = (() => {
@@ -112,8 +101,8 @@ function game () {
     // Update the UI
     messageArea.textContent = message;
 
-    updatePlayInfo(computerPlayInfo, computerChoice);
-    updatePlayInfo(playerPlayInfo, playerChoice);
+    computerPlayInfo.querySelector("img").src = imageSources[computerChoice];
+    playerPlayInfo.querySelector("img").src = imageSources[playerChoice];
 
     computerScoreArea.textContent = useFancyNumber(computerScore);
     playerScoreArea.textContent = useFancyNumber(playerScore);
