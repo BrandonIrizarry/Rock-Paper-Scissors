@@ -58,12 +58,19 @@ const computerScoreArea = document.querySelector("#computer .score");
 const playerScoreArea = document.querySelector("#player .score");
 const computerPlayInfo = document.querySelector("#computer .play");
 const playerPlayInfo = document.querySelector("#player .play");
+const resetDock = document.createElement("div");
+resetDock.style.height = "25vh";
 
 let computerScore = 0;
 let playerScore = 0;
 const MAX_SCORE = 5;
 
 gameSelectionButtons.forEach(button => button.addEventListener("click", game));
+
+resetDock.addEventListener("click", () => {
+    resetDock.remove();
+    reset();
+});
 
 // Create 'useFancyNumber' using a factory, to avoid creating and
 // defining 'fancy' with each invocation.
@@ -110,6 +117,7 @@ function game () {
 
     if (computerScore === MAX_SCORE || playerScore === MAX_SCORE) {
 	buttonDock.remove();
+	document.body.appendChild(resetDock);
     }
 }
 
