@@ -64,7 +64,9 @@ article > * {
 }
 
 .score {
-    font-size: 2em;
+    width: 200px;
+    height: 280px;
+    font-size: 10em;
 }
 
 .button-dock {
