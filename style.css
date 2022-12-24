@@ -17,11 +17,6 @@ img {
     height: 200px;
 }
 
-img.fitted {
-    width: 75%;
-    height: 75%;
-}
-
 body {
     margin: 0;
     display: flex;
