@@ -107,7 +107,7 @@ function game () {
     }
 
     // Update the UI
-    messageArea.textContent = message;
+    //messageArea.textContent = message;
 
     computerPlayInfo.querySelector("img").src = imageSources[computerChoice];
     playerPlayInfo.querySelector("img").src = imageSources[playerChoice];
