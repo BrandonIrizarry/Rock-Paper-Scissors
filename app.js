@@ -81,6 +81,9 @@ resetButton.addEventListener("click", () => {
     reset();
 });
 
+playerScoreArea.addEventListener("transitionend", e => e.target.classList.remove("increased", "tied"));
+computerScoreArea.addEventListener("transitionend", e => e.target.classList.remove("increased", "tied"));
+
 // Create 'useFancyNumber' using a factory, to avoid creating and
 // defining 'fancy' with each invocation.
 const useFancyNumber = (() => {
@@ -111,8 +114,13 @@ function game () {
     // If round is a tie, don't increment any scores
     if (message.match("win")) {
 	playerScore++;
+	playerScoreArea.classList.add("increased");
     } else if (message.match("lose")) {
 	computerScore++;
+	computerScoreArea.classList.add("increased");
+    } else { // a  tie
+	playerScoreArea.classList.add("tied");
+	computerScoreArea.classList.add("tied");
     }
 
     // Update the UI

@@ -75,6 +75,16 @@ article > * {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    transition: all 0.1s;
+}
+
+.increased {
+    background-color: yellow;
+}
+
+.tied {
+    background-color: blue;
 }
 
 .button-dock {
