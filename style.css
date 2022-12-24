@@ -42,7 +42,7 @@ body {
 
 article {
     display: flex;
-    height: 50vh;
+    flex: 3;
 }
 
 article > * {
@@ -60,7 +60,7 @@ article > * {
 
 .score {
     width: 200px;
-    height: 280px;
+    height: 150px;
     font-size: 10em;
     display: flex;
     flex-direction: column;
@@ -69,14 +69,14 @@ article > * {
 }
 
 .button-dock {
-    margin-top: auto;
     display: flex;
     flex-direction: row;
+    flex: 1;
 }
 
 .button {
     flex: 1;
-    height: 25vh;
+    padding-top: 10px;
 }
 
 .game-selection:focus {
