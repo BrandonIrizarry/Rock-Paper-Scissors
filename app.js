@@ -58,8 +58,8 @@ const computerScoreArea = document.querySelector("#computer .score");
 const playerScoreArea = document.querySelector("#player .score");
 const computerPlayInfo = document.querySelector("#computer .play");
 const playerPlayInfo = document.querySelector("#player .play");
-const resetDock = document.createElement("div");
-resetDock.style.height = "25vh";
+const resetButton = document.createElement("button");
+resetButton.classList.add("button");
 
 let computerScore = 0;
 let playerScore = 0;
@@ -67,8 +67,9 @@ const MAX_SCORE = 5;
 
 gameSelectionButtons.forEach(button => button.addEventListener("click", game));
 
-resetDock.addEventListener("click", () => {
-    resetDock.remove();
+resetButton.addEventListener("click", () => {
+    resetButton.remove();
+    gameSelectionButtons.forEach(button => buttonDock.appendChild(button));
     reset();
 });
 
@@ -116,8 +117,8 @@ function game () {
     playerScoreArea.textContent = useFancyNumber(playerScore);
 
     if (computerScore === MAX_SCORE || playerScore === MAX_SCORE) {
-	buttonDock.remove();
-	document.body.appendChild(resetDock);
+	gameSelectionButtons.forEach(button => button.remove());
+	buttonDock.appendChild(resetButton);
     }
 }
 
