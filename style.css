@@ -69,8 +69,8 @@ article > * {
     flex-direction: row;
 }
 
-.game-selection {
-    flex: auto;
+.button {
+    flex: 1;
     height: 25vh;
 }
 
