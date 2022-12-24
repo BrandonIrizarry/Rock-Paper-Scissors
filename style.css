@@ -12,6 +12,14 @@ button {
     padding: 0;
 }
 
+.reset-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 20px;
+    text-transform: uppercase;
+}
+
 img {
     width: 200px;
     height: 200px;

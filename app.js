@@ -17,6 +17,8 @@ const imageSources = [
     "assets/edit-cut.svg"
 ];
 
+const genericIconSource = "assets/rock-paper-scissors.svg";
+
 // Game keys
 const gameKey = ["rock", "paper", "scissors"];
 const playerKey = { rock: 0, paper: 1, scissors: 2 };
@@ -59,7 +61,13 @@ const playerScoreArea = document.querySelector("#player .score");
 const computerPlayInfo = document.querySelector("#computer .play");
 const playerPlayInfo = document.querySelector("#player .play");
 const resetButton = document.createElement("button");
-resetButton.classList.add("button");
+resetButton.classList.add("button", "reset-button");
+
+const genericIcon = document.createElement("img");
+genericIcon.src = genericIconSource;
+const playAgainMessage = document.createTextNode("Play again?");
+resetButton.appendChild(playAgainMessage);
+resetButton.appendChild(genericIcon);
 
 let computerScore = 0;
 let playerScore = 0;
