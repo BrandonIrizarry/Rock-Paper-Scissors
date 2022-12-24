@@ -8,6 +8,10 @@ html {
     box-sizing: inherit;
 }
 
+button {
+    padding: 0;
+}
+
 img {
     width: 200px;
     height: 200px;
@@ -31,7 +35,6 @@ body {
 }
 
 .side {
-    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -48,6 +51,7 @@ article {
 }
 
 article > * {
+    padding-top: 10px;
     flex: auto;
 }
 
