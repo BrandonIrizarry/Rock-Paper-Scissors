@@ -1,7 +1,7 @@
 html {
     box-sizing: border-box;
     font-family: Arial;
-    width: max-content;
+    width: min-content;
 }
 
 *, *::before, *::after {
