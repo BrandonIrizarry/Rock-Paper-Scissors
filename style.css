@@ -51,7 +51,7 @@ body {
 
 article {
     display: flex;
-    flex: 3;
+    flex: 2;
 }
 
 article > * {
@@ -67,15 +67,19 @@ article > * {
     background-color: green;
 }
 
+.play {
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .score {
-    width: 200px;
-    height: 150px;
+    flex: auto;
     font-size: 10em;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-
     transition: all 0.1s;
 }
 
@@ -100,4 +104,11 @@ article > * {
 
 .game-selection:focus {
     background-color: #aaa;
+}
+
+@media screen and (min-width: 480px) {
+    .score {
+	height: 150px;
+	justify-content: center;
+    }
 }
