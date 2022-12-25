@@ -1,3 +1,23 @@
-* Instructions
+* Rock Paper Scissors
+** Introduction
+  This is a simple Web-based implementation of the classic game "Rock
+  Paper Scissors". 
 
-The game is currently being refactored into using a Web-based UI.
+  The game starts out with both players (you and the computer)
+  at 0. The game is ready to play as soon as the page is loaded.
+
+** Rounds
+  Select any of the three possible plays at the bottom (click or tap,
+  depending on your device.)
+
+  When you select a play, the computer makes a play: if your play
+  wins, your score is incremented. If the computer's play wins, its
+  score is incremented. If a tie, neither score is incremented.
+
+  A winning play is accompanied by a brief yellow flash on the side of
+  the player who won that round. A tie causes both sides to flash
+  blue.
+
+** Objective
+  The first player to reach five points wins the game. You are offered
+  a choice to play the game again.
