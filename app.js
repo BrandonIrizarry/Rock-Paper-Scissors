@@ -55,7 +55,8 @@ function playRound (computerChoice, playerChoice) {
 const gameSelectionButtons = [...document.querySelectorAll(".game-selection")];
 const buttonDock = document.querySelector(".button-dock");
 
-const messageArea = document.querySelector("#message");
+const computerWinnerMessageArea = document.querySelector("#computer .winner-message");
+const playerWinnerMessageArea = document.querySelector("#player .winner-message");
 const computerScoreArea = document.querySelector("#computer .score");
 const playerScoreArea = document.querySelector("#player .score");
 const computerPlayInfo = document.querySelector("#computer .play");
@@ -135,9 +136,17 @@ function game () {
     if (computerScore === MAX_SCORE || playerScore === MAX_SCORE) {
 	gameSelectionButtons.forEach(button => button.remove());
 	buttonDock.appendChild(resetButton);
+
+	if (computerScore === MAX_SCORE) {
+	    computerWinnerMessageArea.textContent = "Sorry, computer won!";
+	} else {
+	    playerWinnerMessageArea.textContent = "Congratulations, you won!";
+	}
+
     }
 }
 
+// What should happen when game resets
 function reset () {
     document.body.appendChild(buttonDock);
     playerScore = 0;
@@ -147,4 +156,7 @@ function reset () {
     playerPlayInfo.querySelector("img").src = genericIconSource;
     computerScoreArea.textContent = "⓪";
     playerScoreArea.textContent = "⓪";
+
+    computerWinnerMessageArea.textContent = "";
+    playerWinnerMessageArea.textContent = "";
 }
