@@ -139,6 +139,8 @@ function reset () {
     playerScore = 0;
     computerScore = 0;
 
+    computerPlayInfo.querySelector("img").src = genericIconSource;
+    playerPlayInfo.querySelector("img").src = genericIconSource;
     computerScoreArea.textContent = "⓪";
     playerScoreArea.textContent = "⓪";
 }
