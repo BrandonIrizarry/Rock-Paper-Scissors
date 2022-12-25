@@ -76,14 +76,13 @@ let computerScore = 0;
 let playerScore = 0;
 const MAX_SCORE = 5;
 
+// Endow buttons with their respective play action (rock, paper, or scissors)
 gameSelectionButtons.forEach(button => button.addEventListener("click", game));
 
-resetButton.addEventListener("click", () => {
-    resetButton.remove();
-    gameSelectionButtons.forEach(button => buttonDock.appendChild(button));
-    reset();
-});
+// For when the reset button appears
+resetButton.addEventListener("click", reset);
 
+// Remove the changed background color to give the effect of a quick visual animation
 playerScoreArea.addEventListener("transitionend", e => e.target.classList.remove("increased", "tied"));
 computerScoreArea.addEventListener("transitionend", e => e.target.classList.remove("increased", "tied"));
 
@@ -148,6 +147,8 @@ function game () {
 
 // What should happen when game resets
 function reset () {
+    resetButton.remove();
+    gameSelectionButtons.forEach(button => buttonDock.appendChild(button));
     document.body.appendChild(buttonDock);
     playerScore = 0;
     computerScore = 0;
