@@ -1,15 +1,10 @@
 html {
     box-sizing: border-box;
     font-family: Arial;
-    width: min-content;
 }
 
 *, *::before, *::after {
     box-sizing: inherit;
-}
-
-button {
-    padding: 0;
 }
 
 .reset-button {
@@ -19,15 +14,21 @@ button {
     justify-content: center;
 }
 
+p {
+    margin: 0;
+}
+
 img {
     width: 200px;
     height: 200px;
+    padding: 10px;
 }
 
 body {
     margin: 0;
     display: flex;
     flex-direction: column;
+    width: min-content;
 }
 
 #message {
@@ -46,10 +47,6 @@ body {
 article {
     display: flex;
     min-width: 100vw;
-}
-
-article > * {
-    padding-top: 10px;
 }
 
 #computer {
@@ -89,12 +86,9 @@ article > * {
 
 .button-dock {
     display: flex;
-    flex-direction: row;
-    flex: 1;
 
     /* Set this to be 3x image width */
     min-width: 600px;
-
     min-height: 300px;
 }
 
