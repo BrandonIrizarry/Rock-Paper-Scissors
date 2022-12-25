@@ -95,11 +95,13 @@ article > * {
 
     /* Set this to be 3x image width */
     min-width: 600px;
+
+    min-height: 400px;
 }
 
 .button {
     padding-top: 10px;
-    width: 100%;
+    width: 100%; /* for when a sole button occupies the dock */
 }
 
 .game-selection:focus {
@@ -112,5 +114,10 @@ article > * {
 	height: 150px;
 	justify-content: center;
 	font-size: 3em;
+    }
+
+    .button-dock {
+	/* Desktops: Don't use a min-height */
+	min-height: 0;
     }
 }
