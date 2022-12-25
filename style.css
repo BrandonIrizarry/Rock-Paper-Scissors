@@ -16,8 +16,7 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    line-height: 20px;
-    text-transform: uppercase;
+    justify-content: center;
 }
 
 img {
@@ -96,7 +95,7 @@ article > * {
     /* Set this to be 3x image width */
     min-width: 600px;
 
-    min-height: 400px;
+    min-height: 300px;
 }
 
 .button {

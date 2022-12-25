@@ -66,6 +66,10 @@ resetButton.classList.add("button", "reset-button");
 const genericIcon = document.createElement("img");
 genericIcon.src = genericIconSource;
 resetButton.appendChild(genericIcon);
+const playAgainMessage = document.createElement("p");
+playAgainMessage.textContent = "Play Again?";
+resetButton.appendChild(playAgainMessage);
+
 
 let computerScore = 0;
 let playerScore = 0;
