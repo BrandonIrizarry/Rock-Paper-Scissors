@@ -36,6 +36,7 @@ body {
 }
 
 .side {
+    flex: 1 0 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -43,18 +44,13 @@ body {
     padding-bottom: 50px;
 }
 
-.banner {
-    margin-bottom: auto;
-}
-
 article {
     display: flex;
-    flex: 2;
+    min-width: 100vw;
 }
 
 article > * {
     padding-top: 10px;
-    flex: auto;
 }
 
 #computer {
@@ -104,11 +100,8 @@ article > * {
     background-color: #aaa;
 }
 
-@media (min-width: 480px) {
-    html {
-	width: auto;
-    }
 
+@media (min-width: 480px) {
     .score {
 	height: 150px;
 	justify-content: center;
