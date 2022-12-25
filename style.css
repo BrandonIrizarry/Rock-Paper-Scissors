@@ -89,11 +89,14 @@ article > * {
     display: flex;
     flex-direction: row;
     flex: 1;
+
+    /* Set this to be 3x image width */
+    min-width: 600px;
 }
 
 .button {
-    flex: 1;
     padding-top: 10px;
+    width: 100%;
 }
 
 .game-selection:focus {
