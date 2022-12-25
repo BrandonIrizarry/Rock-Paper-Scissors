@@ -75,6 +75,9 @@ article > * {
     flex-direction: column;
     align-items: center;
     transition: all 0.1s;
+
+    width: 200px;
+    height: 350px;
 }
 
 .increased {
@@ -108,5 +111,6 @@ article > * {
     .score {
 	height: 150px;
 	justify-content: center;
+	font-size: 3em;
     }
 }
